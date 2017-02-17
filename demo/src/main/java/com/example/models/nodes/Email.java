@@ -5,6 +5,7 @@ package com.example.models.nodes;
  */
 
 import org.neo4j.ogm.annotation.GraphId;
+import org.neo4j.ogm.annotation.Index;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
 
@@ -16,6 +17,7 @@ public class Email {
 
     @GraphId private Long id;
 
+    @Index(unique = true)
     private String email;
 
     private Email() {

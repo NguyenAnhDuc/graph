@@ -1,6 +1,7 @@
 package com.example.models.nodes;
 
 import org.neo4j.ogm.annotation.GraphId;
+import org.neo4j.ogm.annotation.Index;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
 
@@ -16,6 +17,7 @@ public class VneId {
     @GraphId
     private Long id;
 
+    @Index(unique = true)
     private String vneId;
 
     private VneId() {

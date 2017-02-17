@@ -1,6 +1,7 @@
 package com.example.models.nodes;
 
 import org.neo4j.ogm.annotation.GraphId;
+import org.neo4j.ogm.annotation.Index;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
 
@@ -16,6 +17,7 @@ public class Province {
     @GraphId
     private Long id;
 
+    @Index(unique = true)
     private String province;
 
     private Province() {
@@ -26,12 +28,12 @@ public class Province {
         this.province = province;
     }
 
-    @Relationship(type = "HAS_A", direction = Relationship.INCOMING)
+    /*@Relationship(type = "HAS_A", direction = Relationship.INCOMING)
     public Set<FptId> fptIds;
     public void hasFptId(FptId fptId){
         if (fptIds == null) fptIds = new HashSet<>();
         fptIds.add(fptId);
-    }
+    }*/
 
     @Relationship(type = "BELONGS_TO", direction = Relationship.OUTGOING)
     public Set<District> districts;

@@ -1,6 +1,7 @@
 package com.example.models.nodes;
 
 import org.neo4j.ogm.annotation.GraphId;
+import org.neo4j.ogm.annotation.Index;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
 
@@ -16,6 +17,7 @@ public class Address {
     @GraphId
     private Long id;
 
+    @Index(unique = true)
     private String address;
 
     private Address() {
@@ -26,12 +28,12 @@ public class Address {
         this.address = address;
     }
 
-    @Relationship(type = "HAS_A", direction = Relationship.INCOMING)
+    /*@Relationship(type = "HAS_A", direction = Relationship.INCOMING)
     public Set<FptId> fptIds;
     public void hasFptId(FptId fptId){
         if (this.fptIds == null) fptIds = new HashSet<>();
         this.fptIds.add(fptId);
-    }
+    }*/
 
     @Relationship(type = "BELONGS_TO", direction = Relationship.INCOMING)
     public District district;

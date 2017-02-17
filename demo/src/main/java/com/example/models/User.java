@@ -14,7 +14,8 @@ import java.util.Date;
  * Represents an User for this web application.
  */
 @Entity
-@Table(name = "test_user")
+//@Table(name = "test_user")
+@Table(name = "tbl_user")
 public class User {
 
     // ------------------------
