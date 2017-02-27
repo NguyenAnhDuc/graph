@@ -1,0 +1,10 @@
+1. Install Neo4j
+    + Java 8
+    + Forward port: 7687, 7474, 7473
+
+2. Instal mysql and import from vio
+
+3. Run Application:
+    + Create index on neo4j
+    + Run application
+
